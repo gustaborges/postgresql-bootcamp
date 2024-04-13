@@ -1,0 +1,30 @@
+services:
+  postgrebootcamp:
+      image: postgres
+      restart: always
+      ports:
+        - 5432:5432
+      environment:
+        - POSTGRES_PASSWORD=admin
+      volumes:
+        - pgbootcamp.data:/var/lib/postgresql/data
+
+  pgadmin4:
+      image: dpage/pgadmin4
+      restart: always
+      environment:
+        - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+        - PGADMIN_DEFAULT_PASSWORD=admin
+      volumes:
+        - ./pgadmin4/servers.json:/pgadmin4/servers.json
+        - ./pgadmin4/pgpass:/pgpass
+        - ./queries:/var/lib/pgadmin/storage/admin_admin.com
+        - pgadmin.working.dir:/var/lib/pgadmin
+      ports:
+        - 5433:80
+      depends_on:
+        - postgrebootcamp
+
+volumes:
+  pgbootcamp.data:
+  pgadmin.working.dir:

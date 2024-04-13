@@ -1,0 +1,1 @@
+SELECT * FROM actors WHERE date_of_birth BETWEEN '1991-01-01' AND '1995-01-01';

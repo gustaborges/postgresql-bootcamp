@@ -1,0 +1,14 @@
+{
+  "Servers": {
+    "1": {
+        "Name": "PostgreBootcamp",
+        "Group": "Servers",
+        "Port": 5432,
+        "Username": "postgres",
+        "PassFile": "/pgpass",
+        "Host": "host.docker.internal",
+        "SSLMode": "prefer",
+        "MaintenanceDB": "postgres"
+    }
+  } 
+}
