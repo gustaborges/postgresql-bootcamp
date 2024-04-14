@@ -1,0 +1,22 @@
+hr database
+> hr.sql
+
+stock_market database
+> stocks_symbols
+> stocks_types
+> stocks_prices
+
+northwind database
+> northwind.sql
+
+learning database
+> customers.sql
+> products.sql
+> purchases.sql
+
+movie database
+> actors.sql
+> directors.sql
+> movies.sql
+> movies_revenues.sql
+> movies_actors.sql
