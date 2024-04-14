@@ -6,7 +6,7 @@
         "Port": 5432,
         "Username": "postgres",
         "PassFile": "/pgpass",
-        "Host": "host.docker.internal",
+        "Host": "postgrebootcamp",
         "SSLMode": "prefer",
         "MaintenanceDB": "postgres"
     }

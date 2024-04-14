@@ -10,6 +10,7 @@ services:
         - pgbootcamp.data:/var/lib/postgresql/data
 
   pgadmin4:
+      user: root
       image: dpage/pgadmin4
       restart: always
       environment:
