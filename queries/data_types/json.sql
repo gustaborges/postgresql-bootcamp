@@ -16,7 +16,15 @@ CREATE TABLE table_json (
 INSERT INTO table_json (JSON, JSONB) VALUES 
 (
 	'{"name":"Adam","age":20,"accomplishments":["Won math contest", "Has 9 children"]}',
-	'{"name":"Mary","age":40,"accomplishments":["Won nobel prize"]}'
+	'{"name":"John","age":30,"accomplishments":["Won nobel prize"]}'
 );
 
 SELECT * FROM table_json;
+
+--Creating an GIN index on JSONB column
+CREATE INDEX ON table_json USING GIN(JSONB jsonb_path_ops);-- non-default GIN operator class jsonb_path_ops
+CREATE INDEX ON table_json USING GIN(JSONB);-- default GIN operator class jsonb_ops
+
+-- Selectig specific data in JSON column
+SELECT jsonb->'name' from table_json where jsonb @> '{"age":40}'
+SELECT jsonb->'name' from table_json where jsonb ? 'age'
